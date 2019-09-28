@@ -1,0 +1,40 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="form-group">
+                    <label for="{{form.codigo.name}}">{{form.codigo.label}}</label>
+                    {{form.codigo}}
+                </div>
+            </div>
+            <div class="col-md-8 offset-md-2">
+                <div class="form-group">
+                    <label for="{{form.tipo_cliente.name}}">{{form.tipo_cliente.label}}</label>
+                    {{form.tipo_cliente}}
+                </div>
+            </div>
+            <div class="col-md-8 offset-md-2">
+                <div class="form-group">
+                    <label for="{{form.nombre.name}}">{{form.nombre.label}}</label>
+                    {{form.nombre}}
+                </div>
+            </div>
+            <div class="col-md-8 offset-md-2">
+                <div class="form-group">
+                    <label for="{{form.domicilio.name}}">{{form.domicilio.label}}</label>
+                    {{form.domicilio}}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="form-group">
+                    <button class="btn btn-primary" type="submit">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}

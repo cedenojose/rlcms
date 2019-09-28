@@ -1,0 +1,10 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+        <form action="" method="post">
+            {% csrf_token %}
+            <h3>Desea eliminar el registro de egresos de {{ object.descripcion }}?</h3>
+            <button class="btn btn-danger" type="submit">Si, Eliminar</button>
+            <a class="btn btn-default" href="{% url 'egresos:listar' %}">Cancelar</a>
+        </form>
+{% endblock %}

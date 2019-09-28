@@ -1,0 +1,31 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    {% if object_list %}
+    <table class="table table-bordered">
+        
+        <tr class="text-center">
+            <th>Empleado</th>
+            <th>Descripcion</th>
+            <th>Costo Unitario (Bs)</th>
+            <th>Cantidad</th>
+            <th>Fecha</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </tr>
+        {% for egreso in object_list%}
+        <tr class="text-center">
+            <td>{{ egreso.empleado.username }}</td>
+            <td>{{ egreso.descripcion }}</td>
+            <td>{{ egreso.costo_unitario }}</td>
+            <td>{{ egreso.cantidad }}{{ egreso.unidad_medida.simbolo }}</td>
+            <td class="text-left">{{ egreso.fecha }}</td>
+            <td><a href="{% url 'egresos:editar' egreso.id %}">Editar</a></td>
+            <td><a href="{% url 'egresos:eliminar' egreso.id %}">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <h3>No hay clientes registrados</h3>
+    {% endif %}
+{% endblock %}
