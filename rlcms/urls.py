@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^clientes/', include('rlcms.apps.clientes.urls', namespace='clientes')),
     url(r'^egresos/', include('rlcms.apps.egresos.urls', namespace='egresos')),
+    url(r'^pedidos/', include('rlcms.apps.pedidos.urls', namespace='pedidos')),
 ]

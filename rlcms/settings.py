@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rlcms.apps.clientes',
     'rlcms.apps.egresos',
+    'rlcms.apps.pedidos',
 ]
 
 MIDDLEWARE = [
