@@ -1,0 +1,29 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+	{% if object_list %}
+	<table class="table table-bordered">
+		
+		<tr class="text-center">
+			<th>Tipo</th>
+			<th>Codigo</th>
+			<th>Nombre</th>
+			<th>Domicilio</th>
+			<th>Editar</th>
+			<th>Eliminar</th>
+		</tr>
+		{% for cliente in object_list%}
+		<tr class="text-center">
+			<td>{{ cliente.tipo_cliente.nomenclatura }}</td>
+			<td>{{ cliente.codigo }}</td>
+			<td class="text-left">{{ cliente.nombre }}</td>
+			<td class="text-left">{{ cliente.domicilio }}</td>
+			<td><a href="{% url 'clientes:editar' cliente.codigo%}">Editar</a></td>
+			<td><a href="{% url 'clientes:eliminar' cliente.codigo %}">Eliminar</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+	{% else %}
+	<h3>No hay Egresos registrados</h3>
+	{% endif %}
+{% endblock %}
